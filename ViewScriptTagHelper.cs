@@ -53,7 +53,8 @@ public class ViewScriptTagHelper : TagHelper
                 // people love their cache busting versions
                 src = fileVersionProvider.AddFileVersionToPath(src, src);
             }
-            
+
+            output.Attributes.RemoveAll("src");
             output.Attributes.Add("src", src);
         }
         else
